@@ -25,14 +25,14 @@ html, body {
   .page-title {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #007bff;
+    color: #624185;
     text-align: center; /* Center the title */
   }
   
   .description-container {
     width: 100%;
     max-width: 600px;
-    background-color: #e0f7fa; /* Light cyan background */
+    background-color: #f7e5d6; /* Light cyan background */
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
@@ -43,7 +43,7 @@ html, body {
   .description-label {
     font-size: 16px;
     font-weight: bold;
-    color: #007bff;
+    color: #624185;
     margin-bottom: 10px;
     text-align: right;
   }
@@ -60,7 +60,7 @@ html, body {
     max-width: 600px;
     min-height: 200px;
     background-color: #ffffff;
-    border: 2px dashed #007bff;
+    border: 2px dashed #624185;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -104,7 +104,7 @@ html, body {
   }
   
   .upload-text {
-    color: #007bff;
+    color: #624185;
     font-size: 16px;
     font-weight: bold;
   }
@@ -113,10 +113,10 @@ html, body {
     position: absolute;
     top: 20px; /* Adjust as needed */
     right: 7px; /* Adjust as needed */
-    background-color: #007bff;
+    background-color: #624185;
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
@@ -130,7 +130,7 @@ html, body {
   .rectangle-addPoints {
     position: absolute;
     bottom: 20px; /* Adjust as needed */
-    background-color: #007bff;
+    background-color: #624185;
     color: white;
     border: none;
     border-radius: 5px;
@@ -170,7 +170,7 @@ html, body {
     .rectangle-addPoints {
         position: absolute;
         bottom: 20px; /* Adjust as needed */
-        background-color: #007bff;
+        background-color: #624185;
         color: white;
         border: none;
         border-radius: 5px;
@@ -183,7 +183,7 @@ html, body {
       }
       
       .rectangle-addPoints:hover {
-        background-color: #0056b3; /* Darker blue on hover */
+        background-color: #3b2747; /* Darker blue on hover */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on hover */
         transform: translateY(-2px); /* Move button down slightly on hover */
       }

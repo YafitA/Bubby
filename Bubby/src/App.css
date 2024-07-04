@@ -39,7 +39,7 @@ html, body, #root {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-color: #f8bbbe;
+  background-color: #f2ad73;
   background-image: url('https://i.imgur.com/npQO2Eb.jpg'); /* Add the path to your image here */
   background-size: cover;
   position: absolute;
@@ -95,7 +95,7 @@ html, body, #root {
   height: 80px;
   border-radius: 50%;
   border: none;
-  background-color: #690967; /* Hot pink */
+  background-color: #624185; /* Hot pink */
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -104,7 +104,7 @@ html, body, #root {
 }
 
 .circle-button:hover {
-  background-color: #690967; /* Darker shade of pink */
+  background-color: #3b2747; /* Darker shade of pink */
   transform: scale(1.1);
 }
 
@@ -246,7 +246,7 @@ textarea {
   right: 83%;
   width: 270px;
   height: 500px;
-  background-color: #ffa551;
+  background-color: #ffa345;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px; /* Padding inside the container */
@@ -279,7 +279,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ff69b4; /* Pink color */
+  background-color: #472151; /* Pink color */
   color: white;
   font-size: 24px;
   cursor: pointer;
@@ -289,7 +289,7 @@ textarea {
 
 /* Hover effect for the add photo button */
 .addPhoto:hover {
-  background-color: #ff1493; /* Darker pink */
+  background-color: #472151; /* Darker pink */
 }
 
 /* Hover effect for images */
@@ -310,7 +310,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #690967;
+  background-color: #624185;
   color: white;
   border-radius: 50%;
   font-size: 24px;
@@ -329,7 +329,7 @@ textarea {
   right: 8%;
   width: 130px;
   height: 500px;
-  background-color: #ffa551;
+  background-color: #ffa345;
   text-align: center;
   font-weight: bold;
   color:#f0f0f0;
@@ -338,7 +338,7 @@ textarea {
 
 .rectangle-points {
   position: absolute;
-  background-color:#ffd700;
+  background-color:#624185;
   color: white;
   border: none;
   border-radius: 5px;

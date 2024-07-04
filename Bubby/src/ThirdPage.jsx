@@ -19,23 +19,22 @@ const ThirdPage = ({ navigate }) => {
     <div className="third-page-container">
       <h1>משחקים</h1>
       <div className="third-page-button-container">
-        <button className="third-page-circle-button" onClick={navigateToTicTocToe} style={{ backgroundColor: 'pink', color: 'white'}}>
+        <button className="third-page-circle-button" onClick={navigateToTicTocToe} style={{ backgroundColor: '#ffa345', color: 'white'}}>
           איקס עיגול
         </button>
-        <button className="third-page-circle-button" onClick={navigateToSnakesAndLadders} style={{ backgroundColor: '#f3afaf', color: 'white'}}>
+        <button className="third-page-circle-button" onClick={navigateToSnakesAndLadders} style={{ backgroundColor: '#472151', color: 'white'}}>
           סולמות ונחשים
         </button>
-        <button className="third-page-circle-button" onClick={navigateToGooseGame} style={{ backgroundColor: '#f3d9e4', color: 'white'}}>
+        <button className="third-page-circle-button" onClick={navigateToGooseGame} style={{ backgroundColor: '#c1246b', color: 'white'}}>
           משחק האווזים
         </button>
-        <button className="third-page-circle-button" onClick={navigateToCheckers} style={{ backgroundColor: '#fde5b4', color: 'white'}}>
+        <button className="third-page-circle-button" onClick={navigateToCheckers} style={{ backgroundColor: '#438696', color: 'white'}}>
           צקרס
         </button>
-        <button className="third-page-circle-button" onClick={() => navigate('home')} style={{ backgroundColor: '#c62653', color: 'white'}}>
+      </div>
+      <button className="Back-button" onClick={() => navigate('home')} style={{ backgroundColor: '#624185', color: 'white'}}>
           חזרה
         </button>
-      </div>
-      
     </div>
   );
 };
