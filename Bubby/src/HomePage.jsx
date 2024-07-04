@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 
+
 const HomePage = ({ navigate }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [taskText, setTaskText] = useState('');
@@ -51,6 +52,7 @@ const HomePage = ({ navigate }) => {
   }
 
   return (
+    
     <div className="center-container">
       <div className="circle-image"/>
       <div className="buttons-container">
@@ -100,7 +102,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('סבתא מרגישה בודדה! לבקר את סבתא')}
           onMouseLeave={handleMouseLeave}
         >
-        <img src='https://i.imgur.com/Py8VmPR.jpg' alt='visit'/>
+        <img src='https://i.imgur.com/VyOq5f3.jpg' alt='visit'/>
         </button>
         <button
           className="circle-button button-7"
@@ -108,7 +110,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('סבתא זקוקה לעזרתך! ביצוע מטלות בית')}
           onMouseLeave={handleMouseLeave}
         >
-        <img src='https://i.imgur.com/VyOq5f3.jpg' alt='home'/>
+        <img src='https://i.imgur.com/EViZYEq.jpg' alt='home'/>
         </button>
       </div>
 
@@ -122,7 +124,7 @@ const HomePage = ({ navigate }) => {
               onChange={(e) => setTaskText(e.target.value)}
               placeholder="עשינו הליכה בפארק..."
             ></textarea>
-            <button className="report-button" onClick={handleTaskReport}>Complete</button>
+            <button className="report-button" onClick={handleTaskReport}>קבל נקודות!</button>
           </div>
         </div>
       )}
@@ -174,15 +176,24 @@ const HomePage = ({ navigate }) => {
 </div>
 
 
-      <div className='profileContainer'>
+      {/* <div className='profileContainer'>
         מספר נקודות שנצברו
 
         <button className='rectangle-points'>
           50
-        </button>
+        </button>        
+      </div> */}
 
-        
-         </div>
+      <div className="pointsArea">
+        :הנקודות שצברת
+        <div className='pointsDisplay'>
+          255
+        </div>
+      </div>
+
+      <div className="profileArea">
+        אזור אישי
+      </div>
 
       {showTooltip && (
         <div className="bottom-tooltip">

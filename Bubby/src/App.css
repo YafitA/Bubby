@@ -12,6 +12,19 @@ html, body, #root {
   background-color: #f0f0f0;
 }
 
+.background {
+  background-image: url('https://ideogram.ai/assets/image/lossless/response/FiaFT0qwQ3SwRZBYA1rOaQ');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: fixed; /* To ensure it covers the whole viewport */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Make sure it's behind all other content */
+}
+
 .center-container {
   position: relative;
   display: flex;
@@ -313,7 +326,7 @@ textarea {
 .profileContainer{
   position: absolute;
   top: -30px;
-  right: 1%;
+  right: 8%;
   width: 130px;
   height: 500px;
   background-color: #ffa345;
@@ -340,3 +353,48 @@ textarea {
   height: 80px;
 }
 
+.pointsArea{
+  position: absolute;
+  bottom: 75%;
+  left: 85%;
+  
+  width: 250px;
+  height: 125px;
+  background-color: #ffa551;
+  text-align: center;
+  font-weight: bold;
+  color:#f0f0f0;
+  border-radius: 5px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.pointsDisplay{
+  position:absolute;
+  border-radius: 5px;
+  width:150px;
+  background-color: #690967;
+  color: white;
+  cursor: pointer;
+  top: 20%;
+  right:7%;
+  font-size:50px;
+  padding:2px 30px ;
+  vertical-align: center;
+}
+
+.profileArea{
+  position: absolute;
+  bottom: 2%;
+  left: 85%;
+  width: 250px;
+  height: 300px;
+  background-color: #ffa551;
+  text-align: right;
+  font-weight: bold;
+  color:#f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
