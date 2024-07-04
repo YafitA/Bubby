@@ -1,5 +1,4 @@
 import  { useState } from 'react';
-
 // eslint-disable-next-line react/prop-types
 const HomePage = ({ navigate }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -78,6 +77,7 @@ const HomePage = ({ navigate }) => {
           7
         </button>
       </div>
+         
 
       {isModalOpen && (
         <div className="modal">
@@ -108,8 +108,24 @@ const HomePage = ({ navigate }) => {
           </div>
         </div>
       )}
-    </div>
+
+      <div className='imagesContainer'>
+      אלבום התמונות המשפחתי
+      <img src=''/>
+        <img src=''/>
+        <img src=''/>
+        <img src=''/>
+        <img src=''/>
+      </div>
+
+      <div className='profileContainer'>
+      מספר נקודות שצברת    
+      <img src=''/>   
+      </div>
+
+      </div>
   );
+      
 };
 
 export default HomePage;

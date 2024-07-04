@@ -36,6 +36,7 @@ html, body {
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
+    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
@@ -44,6 +45,7 @@ html, body {
     font-weight: bold;
     color: #007bff;
     margin-bottom: 10px;
+    text-align: right;
   }
   
   .description-content {
@@ -69,6 +71,7 @@ html, body {
     position: relative;
     padding: 20px;
     box-sizing: border-box;
+    text-align: center;
   }
   
   .file-input {
@@ -106,10 +109,10 @@ html, body {
     font-weight: bold;
   }
   
-  .circle-button {
+  .circle-button2 {
     position: absolute;
-    top: -30px; /* Adjust as needed */
-    right: -100px; /* Adjust as needed */
+    top: 20px; /* Adjust as needed */
+    right: 7px; /* Adjust as needed */
     background-color: #007bff;
     color: white;
     border: none;
@@ -118,7 +121,7 @@ html, body {
     cursor: pointer;
     font-size: 16px;
     width: 100px;
-    height: 100px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,11 +161,11 @@ html, body {
       font-size: 14px;
     }
   
-    .circle-button {
+    /* .circle-button2 {
       width: 80px;
       height: 80px;
       font-size: 14px;
-    }
+    } */
   
     .rectangle-addPoints {
         position: absolute;
