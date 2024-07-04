@@ -1,14 +1,18 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from dotenv import dotenv_values
+from fastapi import FastAPI
 
-uri = "mongodb+srv://shirp999:tmosWXHowOcUSocO@bubbycluster.dlmqpxq.mongodb.net/?retryWrites=true&w=majority&appName=BubbyCluster"
+config = dotenv_values(".env")
 
-# Create a new client and connect to the server
-client = MongoClient(uri, server_api=ServerApi('1'))
+app = FastAPI()
 
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
+@app.on_event("startup")
+def startup_db_client():
+    app.mongodb_client = MongoClient(config["ATLAS_URI"])
+    app.database = app.mongodb_client[config["DB_NAME"]]
+    print("Connected to the MongoDB database!")
+
+@app.on_event("shutdown")
+def shutdown_db_client():
+    app.mongodb_client.close()
