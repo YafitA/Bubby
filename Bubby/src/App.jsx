@@ -1,18 +1,27 @@
-// src/App.js
+import { useState } from 'react';
 import './App.css';
-
+import HomePage from './HomePage.jsx';
+import SecondPage from './SecondPage.jsx';
+import ThirdPage from './ThirdPage.jsx';
 function App() {
-  const openNewWindow = () => {
-    window.open('https://www.example.com', '_blank');
+  const [page, setPage] = useState('home');
+
+  const renderPage = () => {
+    switch (page) {
+      case 'home':
+        return <HomePage navigate={setPage} />;
+      case 'second':
+        return <SecondPage navigate={setPage} />;
+      case 'third':
+        return <ThirdPage navigate={setPage} />;
+      default:
+        return <HomePage navigate={setPage} />;
+    }
   };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My Web Page</h1>
-        <p>Start designing your awesome webpage here!</p>
-        <button className="circular-button" onClick={openNewWindow}>+</button>
-      </header>
+      {renderPage()}
     </div>
   );
 }
