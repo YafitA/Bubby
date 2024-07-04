@@ -49,7 +49,7 @@ const HomePage = ({ navigate }) => {
         <button
           className="circle-button button-1"
           onClick={() => handleNavigation('second')}
-          onMouseEnter={() => handleMouseEnter('This leads to the second page.')}
+          onMouseEnter={() => handleMouseEnter('תעד את הרגע! העלאת תמונה לאלבום התמונות')}
           onMouseLeave={handleMouseLeave}
         >
         <img src='https://i.imgur.com/VL452a7.jpg' alt='camera'/>
@@ -57,7 +57,7 @@ const HomePage = ({ navigate }) => {
         <button
           className="circle-button button-2"
           onClick={() => handleNavigation('third')}
-          onMouseEnter={() => handleMouseEnter('This leads to the third page.')}
+          onMouseEnter={() => handleMouseEnter('משעמם? משחק עם סבתא')}
           onMouseLeave={handleMouseLeave}
         >
         <img src='https://i.imgur.com/45MzSdp.jpg' alt='game-controller'/>
@@ -65,7 +65,7 @@ const HomePage = ({ navigate }) => {
         <button
           className="circle-button button-3"
           onClick={() => handleNavigation('4th')}
-          onMouseEnter={() => handleMouseEnter('This leads to the fourth page.')}
+          onMouseEnter={() => handleMouseEnter('למה שלא תתקשר לסבתא? שיחה עם סבתא')}
           onMouseLeave={handleMouseLeave}
         >
           3
@@ -73,7 +73,7 @@ const HomePage = ({ navigate }) => {
         <button
           className="circle-button button-4"
           onClick={handleModalToggle}
-          onMouseEnter={() => handleMouseEnter('Click to report a task.')}
+          onMouseEnter={() => handleMouseEnter('מתי בפעם האחרונה בילית עם סבתא? בילוי חודשי')}
           onMouseLeave={handleMouseLeave}
         >
           4
@@ -81,7 +81,7 @@ const HomePage = ({ navigate }) => {
         <button
           className="circle-button button-5"
           onClick={() => handleNavigation('5th')}
-          onMouseEnter={() => handleMouseEnter('This leads to the fifth page.')}
+          onMouseEnter={() => handleMouseEnter('מה נשמע עם סבתא? שלח לה הודעה')}
           onMouseLeave={handleMouseLeave}
         >
           5
@@ -89,7 +89,7 @@ const HomePage = ({ navigate }) => {
         <button
           className="circle-button button-6"
           onClick={() => handleNavigation('5th')}
-          onMouseEnter={() => handleMouseEnter('This also leads to the fifth page.')}
+          onMouseEnter={() => handleMouseEnter('סבתא מרגישה בודדה! לבקר את סבתא')}
           onMouseLeave={handleMouseLeave}
         >
           6
@@ -97,7 +97,7 @@ const HomePage = ({ navigate }) => {
         <button
           className="circle-button button-7"
           onClick={handleSecondModalToggle}
-          onMouseEnter={() => handleMouseEnter('Click to provide feedback.')}
+          onMouseEnter={() => handleMouseEnter('סבתא זקוקה לעזרתך! ביצוע מטלות בית')}
           onMouseLeave={handleMouseLeave}
         >
           7
@@ -135,14 +135,36 @@ const HomePage = ({ navigate }) => {
       )}
 
 
-    <div className='imagesContainer'>
+    {/* <div className='imagesContainer'>
         <img src='https://i.imgur.com/B8bse0F.jpg' alt='Image 1'/>
         <img src='https://i.imgur.com/a5ymhRM.jpg' alt='Image 2'/>
         <img src='https://i.imgur.com/w89SxVx.jpg' alt='Image 3'/>
         <img src='https://i.imgur.com/YF397nd.jpg' alt='Image 4'/>
         <img src='https://i.imgur.com/uNuSwHW.jpg' alt='Image 5'/>
         <div className="addPhoto" onClick={() => handleNavigation('second')}>+</div>
-    </div>
+    </div> */}
+
+<div className='imagesContainer'>
+  <div className='imageWrapper'>
+    <img src='https://i.imgur.com/B8bse0F.jpg' alt='Image 1'/>
+  </div>
+  <div className='imageWrapper'>
+    <img src='https://i.imgur.com/a5ymhRM.jpg' alt='Image 2'/>
+  </div>
+  <div className='imageWrapper'>
+    <img src='https://i.imgur.com/w89SxVx.jpg' alt='Image 3'/>
+  </div>
+  <div className='imageWrapper'>
+    <img src='https://i.imgur.com/YF397nd.jpg' alt='Image 4'/>
+  </div>
+  <div className='imageWrapper'>
+    <img src='https://i.imgur.com/uNuSwHW.jpg' alt='Image 5'/>
+  </div>
+
+  
+  <div className="addPhoto" onClick={() => handleNavigation('second')}>+</div>
+</div>
+
 
       <div className='profileContainer'>
         מספר נקודות שנצברו
@@ -150,7 +172,9 @@ const HomePage = ({ navigate }) => {
         <button className='rectangle-points'>
           50
         </button>
-      </div>
+
+        
+         </div>
 
       {showTooltip && (
         <div className="bottom-tooltip">

@@ -41,7 +41,7 @@ html, body, #root {
   position: absolute;
   right: 200px;
   top: 50%;
-  left: 60%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 350px;
   height: 400px;
@@ -57,7 +57,7 @@ html, body, #root {
 .bottom-tooltip {
   position: fixed;
   bottom: 20px; /* Distance from the bottom */
-  left: 60%;
+  left: 50%;
   transform: translateX(-50%);
   background-color: #333; /* Dark background */
   color: #fff; /* White text */
@@ -202,12 +202,12 @@ textarea {
   background-color: #228b22; /* Forest green */
 }
 
-.imagesContainer{
+/* .imagesContainer{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   position: absolute;
   top: -30px;
-  right: 630px;
+  right: 85%;
   width: 270px;
   height: 500px;
   background-color: #ffa551;
@@ -221,6 +221,67 @@ textarea {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+} */
+
+
+.imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px; /* Consistent spacing between images */
+  position: absolute;
+
+  right: 83%;
+  width: 270px;
+  height: 500px;
+  background-color: #ffa551;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px; /* Padding inside the container */
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+
+/* Individual image wrappers */
+.imageWrapper {
+  width: 100%; /* Fill the grid cell */
+  aspect-ratio: 1; /* Maintain a square aspect ratio */
+  overflow: hidden; /* Ensure images don't overflow their wrapper */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Optional: background for image container */
+}
+
+/* Images inside the wrappers */
+.imageWrapper img {
+  width: 100%; /* Ensure the image fills the wrapper */
+  height: 100%;
+  object-fit: cover; /* Cover the entire wrapper */
+  transition: transform 0.2s;
+}
+
+/* Add photo button styling */
+.addPhoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff69b4; /* Pink color */
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for the add photo button */
+.addPhoto:hover {
+  background-color: #ff1493; /* Darker pink */
+}
+
+/* Hover effect for images */
+.imageWrapper img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 .imagesContainer img:hover {
@@ -252,7 +313,7 @@ textarea {
 .profileContainer{
   position: absolute;
   top: -30px;
-  right: -0px;
+  right: 1%;
   width: 130px;
   height: 500px;
   background-color: #ffa551;
