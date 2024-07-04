@@ -68,7 +68,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('This leads to the fourth page.')}
           onMouseLeave={handleMouseLeave}
         >
-          3
+        <img src='https://i.imgur.com/KrWAY9i.jpg' alt='phone'/>
         </button>
         <button
           className="circle-button button-4"
@@ -76,7 +76,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('Click to report a task.')}
           onMouseLeave={handleMouseLeave}
         >
-          4
+        <img src='https://i.imgur.com/HDnOTsF.jpg' alt='car'/>
         </button>
         <button
           className="circle-button button-5"
@@ -84,7 +84,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('This leads to the fifth page.')}
           onMouseLeave={handleMouseLeave}
         >
-          5
+        <img src='https://i.imgur.com/lfPnyMI.jpg' alt='message'/>
         </button>
         <button
           className="circle-button button-6"
@@ -92,7 +92,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('This also leads to the fifth page.')}
           onMouseLeave={handleMouseLeave}
         >
-          6
+        <img src='https://i.imgur.com/Py8VmPR.jpg' alt='visit'/>
         </button>
         <button
           className="circle-button button-7"
@@ -100,7 +100,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('Click to provide feedback.')}
           onMouseLeave={handleMouseLeave}
         >
-          7
+        <img src='https://i.imgur.com/VyOq5f3.jpg' alt='home'/>
         </button>
       </div>
 
