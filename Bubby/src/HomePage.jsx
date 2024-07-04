@@ -151,7 +151,9 @@ const HomePage = ({ navigate }) => {
         <div className="pointsDisplay">255</div>
       </div>
 
-      <div className="profileArea">אזור אישי</div>
+      <div className="profileArea">
+        
+      </div>
 
       {showTooltip && <div className="bottom-tooltip">{tooltipContent}</div>}
 
