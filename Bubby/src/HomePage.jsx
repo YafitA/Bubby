@@ -1,10 +1,13 @@
-import  { useState } from 'react';
-// eslint-disable-next-line react/prop-types
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
+
 const HomePage = ({ navigate }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [taskText, setTaskText] = useState('');
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
   const [feedbackText, setFeedbackText] = useState('');
+  const [tooltipContent, setTooltipContent] = useState('');
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleNavigation = (page) => {
     navigate(page);
@@ -30,54 +33,76 @@ const HomePage = ({ navigate }) => {
     setFeedbackText('');
   };
 
+  const handleMouseEnter = (text) => {
+    setTooltipContent(text);
+    setShowTooltip(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowTooltip(false);
+  };
+
   return (
     <div className="center-container">
       <div className="circle-image"></div>
       <div className="buttons-container">
-        <button 
+        <button
           className="circle-button button-1"
           onClick={() => handleNavigation('second')}
+          onMouseEnter={() => handleMouseEnter('This leads to the second page.')}
+          onMouseLeave={handleMouseLeave}
         >
           1
         </button>
-        <button 
+        <button
           className="circle-button button-2"
           onClick={() => handleNavigation('third')}
+          onMouseEnter={() => handleMouseEnter('This leads to the third page.')}
+          onMouseLeave={handleMouseLeave}
         >
           2
         </button>
-        <button 
+        <button
           className="circle-button button-3"
           onClick={() => handleNavigation('4th')}
+          onMouseEnter={() => handleMouseEnter('This leads to the fourth page.')}
+          onMouseLeave={handleMouseLeave}
         >
           3
         </button>
-        <button 
+        <button
           className="circle-button button-4"
           onClick={handleModalToggle}
+          onMouseEnter={() => handleMouseEnter('Click to report a task.')}
+          onMouseLeave={handleMouseLeave}
         >
           4
         </button>
-        <button 
+        <button
           className="circle-button button-5"
           onClick={() => handleNavigation('5th')}
+          onMouseEnter={() => handleMouseEnter('This leads to the fifth page.')}
+          onMouseLeave={handleMouseLeave}
         >
           5
         </button>
-        <button 
+        <button
           className="circle-button button-6"
           onClick={() => handleNavigation('5th')}
+          onMouseEnter={() => handleMouseEnter('This also leads to the fifth page.')}
+          onMouseLeave={handleMouseLeave}
         >
           6
         </button>
-        <button 
+        <button
           className="circle-button button-7"
           onClick={handleSecondModalToggle}
+          onMouseEnter={() => handleMouseEnter('Click to provide feedback.')}
+          onMouseLeave={handleMouseLeave}
         >
           7
         </button>
       </div>
-         
 
       {isModalOpen && (
         <div className="modal">
@@ -110,22 +135,29 @@ const HomePage = ({ navigate }) => {
       )}
 
       <div className='imagesContainer'>
-      אלבום התמונות המשפחתי
-      <img src=''/>
-        <img src=''/>
-        <img src=''/>
-        <img src=''/>
-        <img src=''/>
+        אלבום התמונות המשפחתי
+        <img src='' alt=''/>
+        <img src='' alt=''/>
+        <img src='' alt=''/>
+        <img src='' alt=''/>
+        <img src='' alt=''/>
       </div>
 
       <div className='profileContainer'>
-      מספר נקודות שצברת    
-      <img src=''/>   
+        מספר נקודות שנצברו
+
+        <button className='rectangle-points'>
+          50
+        </button>
       </div>
 
-      </div>
+      {showTooltip && (
+        <div className="bottom-tooltip">
+          {tooltipContent}
+        </div>
+      )}
+    </div>
   );
-      
 };
 
 export default HomePage;

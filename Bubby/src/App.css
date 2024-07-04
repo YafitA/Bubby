@@ -38,8 +38,9 @@ html, body, #root {
 
 .buttons-container {
   position: absolute;
+  right: 200px;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
   width: 350px;
   height: 400px;
@@ -50,6 +51,30 @@ html, body, #root {
   width: 100%;
   margin: 0;
 }
+
+/* Tooltip styles */
+.bottom-tooltip {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  left: 60%;
+  transform: translateX(-50%);
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  padding: 10px 15px; /* Increased padding */
+  border-radius: 8px; /* Increased border-radius */
+  font-size: 16px; /* Slightly larger font size */
+  font-family: Arial, sans-serif; /* Set font */
+  z-index: 1000; /* Ensure tooltip is above other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+}
+
+.center-container:hover .bottom-tooltip {
+  opacity: 1;
+  bottom: 30px; /* Adjust to move tooltip up slightly on hover */
+}
+
 
 .circle-button {
   width: 80px;
@@ -185,6 +210,7 @@ textarea {
   background-color: #ff69b4;
   text-align: center;
   font-weight: bold;
+  border-radius: 5px;
   color:#f0f0f0;
 }
 .profileContainer{
@@ -197,4 +223,23 @@ textarea {
   text-align: center;
   font-weight: bold;
   color:#f0f0f0;
+  border-radius: 5px;
 }
+
+.rectangle-points {
+  position: absolute;
+  background-color:#ffd700;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  top:50px;
+  right:38px;
+}
+
+.profileImg {
+  width: 80px;
+  height: 80px;
+}
+
