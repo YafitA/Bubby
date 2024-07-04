@@ -42,9 +42,17 @@ const HomePage = ({ navigate }) => {
     setShowTooltip(false);
   };
 
+  const HandleCall = () =>{
+    window.location.href = 'tel:+972586300888'
+  }
+
+  const HandleMessage = () =>{
+    window.location.href = 'sms:+1234567890?body=היי סבתא!'
+  }
+
   return (
     <div className="center-container">
-      <div className="circle-image"></div>
+      <div className="circle-image"/>
       <div className="buttons-container">
         <button
           className="circle-button button-1"
@@ -64,7 +72,7 @@ const HomePage = ({ navigate }) => {
         </button>
         <button
           className="circle-button button-3"
-          onClick={() => handleNavigation('4th')}
+          onClick={HandleCall}
           onMouseEnter={() => handleMouseEnter('למה שלא תתקשר לסבתא? שיחה עם סבתא')}
           onMouseLeave={handleMouseLeave}
         >
@@ -80,7 +88,7 @@ const HomePage = ({ navigate }) => {
         </button>
         <button
           className="circle-button button-5"
-          onClick={() => handleNavigation('5th')}
+          onClick={HandleMessage}
           onMouseEnter={() => handleMouseEnter('מה נשמע עם סבתא? שלח לה הודעה')}
           onMouseLeave={handleMouseLeave}
         >
