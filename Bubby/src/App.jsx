@@ -14,6 +14,14 @@ function App() {
         return <SecondPage navigate={setPage} />;
       case 'third':
         return <ThirdPage navigate={setPage} />;
+        case '4th':
+        return <ThirdPage navigate={setPage} />;
+        case '5th':
+          return <ThirdPage navigate={setPage} />;
+        case '6th':
+          return <ThirdPage navigate={setPage} />;
+        case '7th':
+          return <ThirdPage navigate={setPage} />;
       default:
         return <HomePage navigate={setPage} />;
     }
