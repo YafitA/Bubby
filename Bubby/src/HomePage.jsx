@@ -144,16 +144,6 @@ const HomePage = ({ navigate }) => {
         </div>
       )}
 
-
-    {/* <div className='imagesContainer'>
-        <img src='https://i.imgur.com/B8bse0F.jpg' alt='Image 1'/>
-        <img src='https://i.imgur.com/a5ymhRM.jpg' alt='Image 2'/>
-        <img src='https://i.imgur.com/w89SxVx.jpg' alt='Image 3'/>
-        <img src='https://i.imgur.com/YF397nd.jpg' alt='Image 4'/>
-        <img src='https://i.imgur.com/uNuSwHW.jpg' alt='Image 5'/>
-        <div className="addPhoto" onClick={() => handleNavigation('second')}>+</div>
-    </div> */}
-
 <div className='imagesContainer'>
   <div className='imageWrapper'>
     <img src='https://i.imgur.com/B8bse0F.jpg' alt='Image 1'/>
@@ -175,15 +165,6 @@ const HomePage = ({ navigate }) => {
   <div className="addPhoto" onClick={() => handleNavigation('second')}>+</div>
 </div>
 
-
-      {/* <div className='profileContainer'>
-        מספר נקודות שנצברו
-
-        <button className='rectangle-points'>
-          50
-        </button>        
-      </div> */}
-
       <div className="pointsArea">
         :הנקודות שצברת
         <div className='pointsDisplay'>
@@ -192,7 +173,7 @@ const HomePage = ({ navigate }) => {
       </div>
 
       <div className="profileArea">
-        אזור אישי
+        
       </div>
 
       {showTooltip && (

@@ -44,7 +44,7 @@ html, body, #root {
   background-size: cover;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50.5%;
   transform: translate(-50%, -50%);
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -70,7 +70,7 @@ html, body, #root {
 .bottom-tooltip {
   position: fixed;
   bottom: 20px; /* Distance from the bottom */
-  left: 50%;
+  left: 51%;
   transform: translateX(-50%);
   background-color: #333; /* Dark background */
   color: #fff; /* White text */
@@ -387,14 +387,21 @@ textarea {
 .profileArea{
   position: absolute;
   bottom: 2%;
-  left: 85%;
-  width: 250px;
+  left: 80.5%;
+  width: 290px;
   height: 300px;
-  background-color: #ffa551;
+  /* border-color:#ffa551; */
+
   text-align: right;
   font-weight: bold;
-  color:#f0f0f0;
-  border-radius: 5px;
+  
+  background-color: white; /* Background color */
+  border: 5px solid orange; /* Border color and thickness */
+  border-radius: 8px; /* Rounded corners (optional) */
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
