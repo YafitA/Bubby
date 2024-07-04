@@ -38,13 +38,13 @@ const HomePage = ({ navigate }) => {
           className="circle-button button-1"
           onClick={() => handleNavigation('second')}
         >
-          1
+        <img src='https://i.imgur.com/VL452a7.jpg' alt='camera'/>
         </button>
         <button 
           className="circle-button button-2"
           onClick={() => handleNavigation('third')}
         >
-          2
+        <img src='https://i.imgur.com/45MzSdp.jpg' alt='game-controller'/>
         </button>
         <button 
           className="circle-button button-3"
@@ -109,14 +109,15 @@ const HomePage = ({ navigate }) => {
         </div>
       )}
 
-      <div className='imagesContainer'>
-      אלבום התמונות המשפחתי
-      <img src=''/>
-        <img src=''/>
-        <img src=''/>
-        <img src=''/>
-        <img src=''/>
-      </div>
+
+    <div className='imagesContainer'>
+        <img src='https://i.imgur.com/B8bse0F.jpg' alt='Image 1'/>
+        <img src='https://i.imgur.com/a5ymhRM.jpg' alt='Image 2'/>
+        <img src='https://i.imgur.com/w89SxVx.jpg' alt='Image 3'/>
+        <img src='https://i.imgur.com/YF397nd.jpg' alt='Image 4'/>
+        <img src='https://i.imgur.com/uNuSwHW.jpg' alt='Image 5'/>
+        <div className="addPhoto" onClick={() => handleNavigation('second')}>+</div>
+    </div>
 
       <div className='profileContainer'>
       מספר נקודות שצברת    

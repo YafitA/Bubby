@@ -26,12 +26,13 @@ html, body, #root {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-color: #f8bbbe; /* Gold color */
+  background-color: #f8bbbe;
   background-image: url('path/to/your/image.jpg'); /* Add the path to your image here */
   background-size: cover;
   position: absolute;
-  top:80px;
-  right: 240px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
