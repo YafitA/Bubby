@@ -48,7 +48,7 @@ const HomePage = ({ navigate }) => {
   }
 
   const HandleMessage = () =>{
-    window.location.href = 'sms:+1234567890?body=היי סבתא!'
+    window.location.href = 'tel:+972539287433?body=היי סבתא!'
   }
 
   return (
@@ -114,37 +114,7 @@ const HomePage = ({ navigate }) => {
         </button>
       </div>
 
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close-button" onClick={handleModalToggle}>&times;</span>
-            <h2>!ספרו לנו מה עשיתם</h2>
-            <textarea
-              value={taskText}
-              onChange={(e) => setTaskText(e.target.value)}
-              placeholder="עשינו הליכה בפארק..."
-            ></textarea>
-            <button className="report-button" onClick={handleTaskReport}>קבל נקודות!</button>
-          </div>
-        </div>
-      )}
-
-      {isSecondModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close-button" onClick={handleSecondModalToggle}>&times;</span>
-            <h2>?איך עזרת לסבתא במטלות הבית</h2>
-            <textarea
-              value={feedbackText}
-              onChange={(e) => setFeedbackText(e.target.value)}
-              placeholder="קיפלתי כביסה/שטפתי כלים..."
-            ></textarea>
-            <button className="report-button" onClick={handleFeedbackSubmit}>קבל נקודות!</button>
-          </div>
-        </div>
-      )}
-
-<div className='imagesContainer'>
+      <div className='imagesContainer'>
   <div className='imageWrapper'>
     <img src='https://i.imgur.com/B8bse0F.jpg' alt='Image 1'/>
   </div>
@@ -165,7 +135,7 @@ const HomePage = ({ navigate }) => {
   <div className="addPhoto" onClick={() => handleNavigation('second')}>+</div>
 </div>
 
-      <div className="pointsArea">
+<div className="pointsArea">
         :הנקודות שצברת
         <div className='pointsDisplay'>
           255
@@ -181,6 +151,39 @@ const HomePage = ({ navigate }) => {
           {tooltipContent}
         </div>
       )}
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-button" onClick={handleModalToggle}>&times;</span>
+            <h2 style={{ color: '#472151' }}>!ספרו לנו מה עשיתם</h2>
+            <textarea
+              value={taskText}
+              onChange={(e) => setTaskText(e.target.value)}
+              placeholder="עשינו הליכה בפארק..."
+            ></textarea>
+            <button className="report-button" onClick={handleTaskReport}>קבל נקודות!</button>
+          </div>
+        </div>
+        
+      )}
+
+      {isSecondModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-button" onClick={handleSecondModalToggle}>&times;</span>
+            <h2 style={{ color: '#472151' }}>?איך עזרת לסבתא במטלות הבית</h2>
+            <textarea
+              value={feedbackText}
+              onChange={(e) => setFeedbackText(e.target.value)}
+              placeholder="קיפלתי כביסה/שטפתי כלים..."
+            ></textarea>
+            <button className="report-button" onClick={handleFeedbackSubmit}>קבל נקודות!</button>
+          </div>
+        </div>
+      )}
+
+      
     </div>
   );
 };

@@ -185,7 +185,7 @@ html, body, #root {
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  color: #ff69b4; /* Match the button color */
+  color: #ffa345; /* Match the button color */
 }
 
 textarea {
@@ -198,12 +198,14 @@ textarea {
   border: 1px solid #ccc;
   padding: 10px;
   resize: none;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .report-button {
   direction: rtl;
   padding: 10px 20px;
-  background-color: #32cd32; /* Lime green */
+  background-color: #624185; /* Lime green */
   color: white;
   border: none;
   border-radius: 5px;
@@ -212,7 +214,7 @@ textarea {
 }
 
 .report-button:hover {
-  background-color: #228b22; /* Forest green */
+  background-color: #3b2747; /* Forest green */
 }
 
 /* .imagesContainer{
