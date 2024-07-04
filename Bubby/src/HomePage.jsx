@@ -68,7 +68,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('למה שלא תתקשר לסבתא? שיחה עם סבתא')}
           onMouseLeave={handleMouseLeave}
         >
-          3
+        <img src='https://i.imgur.com/KrWAY9i.jpg' alt='phone'/>
         </button>
         <button
           className="circle-button button-4"
@@ -76,7 +76,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('מתי בפעם האחרונה בילית עם סבתא? בילוי חודשי')}
           onMouseLeave={handleMouseLeave}
         >
-          4
+        <img src='https://i.imgur.com/HDnOTsF.jpg' alt='car'/>
         </button>
         <button
           className="circle-button button-5"
@@ -84,7 +84,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('מה נשמע עם סבתא? שלח לה הודעה')}
           onMouseLeave={handleMouseLeave}
         >
-          5
+        <img src='https://i.imgur.com/lfPnyMI.jpg' alt='message'/>
         </button>
         <button
           className="circle-button button-6"
@@ -92,7 +92,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('סבתא מרגישה בודדה! לבקר את סבתא')}
           onMouseLeave={handleMouseLeave}
         >
-          6
+        <img src='https://i.imgur.com/Py8VmPR.jpg' alt='visit'/>
         </button>
         <button
           className="circle-button button-7"
@@ -100,7 +100,7 @@ const HomePage = ({ navigate }) => {
           onMouseEnter={() => handleMouseEnter('סבתא זקוקה לעזרתך! ביצוע מטלות בית')}
           onMouseLeave={handleMouseLeave}
         >
-          7
+        <img src='https://i.imgur.com/VyOq5f3.jpg' alt='home'/>
         </button>
       </div>
 

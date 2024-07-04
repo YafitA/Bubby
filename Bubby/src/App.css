@@ -27,7 +27,7 @@ html, body, #root {
   height: 250px;
   border-radius: 50%;
   background-color: #f8bbbe;
-  background-image: url('path/to/your/image.jpg'); /* Add the path to your image here */
+  background-image: url('https://i.imgur.com/npQO2Eb.jpg'); /* Add the path to your image here */
   background-size: cover;
   position: absolute;
   top: 50%;
