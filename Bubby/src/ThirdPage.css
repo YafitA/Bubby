@@ -1,0 +1,51 @@
+.third-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+    place-items: center;
+    text-align: center;
+  }
+  
+  .third-page-button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    place-items: center;
+    justify-items: center;
+    vertical-align: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .third-page-circle-button {
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    border-radius: 10px; /* Use a border radius to create rounded corners */
+    margin: 10px;
+    font-size: 16px;
+    display: flex;
+    place-items: center;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .third-page-circle-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .third-page-button-container > .third-page-circle-button:last-child {
+    grid-column: span 2;
+    justify-self: center;
+    vertical-align: center;
+    place-items: center;
+  }
+  
