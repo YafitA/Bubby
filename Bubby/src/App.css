@@ -40,7 +40,7 @@ html, body, #root {
   height: 250px;
   border-radius: 50%;
   background-color: #f2ad73;
-  background-image: url('https://i.imgur.com/npQO2Eb.jpg'); /* Add the path to your image here */
+  /*background-image: url('https://i.imgur.com/npQO2Eb.jpg'); /* Add the path to your image here */
   background-size: cover;
   position: absolute;
   top: 50%;
@@ -48,6 +48,7 @@ html, body, #root {
   transform: translate(-50%, -50%);
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .buttons-container {
@@ -359,7 +360,6 @@ textarea {
   position: absolute;
   bottom: 75%;
   left: 85%;
-  
   width: 250px;
   height: 125px;
   background-color: #ffa551;
