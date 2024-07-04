@@ -1,0 +1,12 @@
+.background {
+    background-image: url('https://ideogram.ai/assets/image/lossless/response/FiaFT0qwQ3SwRZBYA1rOaQ');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: fixed; /* To ensure it covers the whole viewport */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Make sure it's behind all other content */
+  }
