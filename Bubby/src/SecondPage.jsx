@@ -64,7 +64,7 @@ const SecondPage = ({ navigate }) => {
 
       {/* Back Button */}
       <button 
-        className="circle-button" 
+        className="circle-button2" 
         onClick={() => navigate('home')}>
         חזור
       </button>

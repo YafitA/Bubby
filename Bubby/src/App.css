@@ -17,8 +17,8 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   flex-direction: column;
 }
 
@@ -29,7 +29,9 @@ html, body, #root {
   background-color: #ffd700; /* Gold color */
   background-image: url('path/to/your/image.jpg'); /* Add the path to your image here */
   background-size: cover;
-  background-position: center;
+  position: absolute;
+  top:80px;
+  right: 240px;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -39,7 +41,7 @@ html, body, #root {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 350px;
   height: 400px;
 }
 
@@ -48,6 +50,7 @@ html, body, #root {
   width: 100%;
   margin: 0;
 }
+
 .circle-button {
   width: 80px;
   height: 80px;
@@ -171,4 +174,27 @@ textarea {
 
 .report-button:hover {
   background-color: #228b22; /* Forest green */
+}
+
+.imagesContainer{
+  position: absolute;
+  top: -30px;
+  right: 630px;
+  width: 270px;
+  height: 500px;
+  background-color: #ff69b4;
+  text-align: center;
+  font-weight: bold;
+  color:#f0f0f0;
+}
+.profileContainer{
+  position: absolute;
+  top: -30px;
+  right: -0px;
+  width: 130px;
+  height: 500px;
+  background-color: #ff69b4;
+  text-align: center;
+  font-weight: bold;
+  color:#f0f0f0;
 }
