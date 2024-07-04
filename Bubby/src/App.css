@@ -26,12 +26,13 @@ html, body, #root {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-color: #ffd700; /* Gold color */
+  background-color: #f8bbbe;
   background-image: url('path/to/your/image.jpg'); /* Add the path to your image here */
   background-size: cover;
   position: absolute;
-  top:80px;
-  right: 240px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -81,7 +82,7 @@ html, body, #root {
   height: 80px;
   border-radius: 50%;
   border: none;
-  background-color: #ff69b4; /* Hot pink */
+  background-color: #690967; /* Hot pink */
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -90,7 +91,7 @@ html, body, #root {
 }
 
 .circle-button:hover {
-  background-color: #ff1493; /* Darker shade of pink */
+  background-color: #690967; /* Darker shade of pink */
   transform: scale(1.1);
 }
 
@@ -202,24 +203,59 @@ textarea {
 }
 
 .imagesContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   position: absolute;
   top: -30px;
   right: 630px;
   width: 270px;
   height: 500px;
-  background-color: #ff69b4;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 5px;
-  color:#f0f0f0;
+  background-color: #ffa551;
+  border: 1px solid #ccc;
 }
+
+.imagesContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.imagesContainer img:hover {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
+.addPhoto {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #690967;
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.addPhoto:hover {
+  transform: scale(1.1);
+}
+
 .profileContainer{
   position: absolute;
   top: -30px;
   right: -0px;
   width: 130px;
   height: 500px;
-  background-color: #ff69b4;
+  background-color: #ffa551;
   text-align: center;
   font-weight: bold;
   color:#f0f0f0;
