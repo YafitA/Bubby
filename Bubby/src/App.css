@@ -13,16 +13,14 @@ html, body, #root {
 }
 
 .background {
-  background-image: url('https://ideogram.ai/assets/image/lossless/response/FiaFT0qwQ3SwRZBYA1rOaQ');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
-  position: fixed; /* To ensure it covers the whole viewport */
-  top: 0;
-  left: 0;
-  z-index: -1; /* Make sure it's behind all other content */
+  flex-direction: column;
+  background-color: #b0d7e1;
 }
 
 .center-container {
@@ -405,5 +403,19 @@ textarea {
   justify-content: center; /* Center content vertically */
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.circle_decoration{
+  position: absolute;
+  top: 45.5%;
+  left: 50.5%;
+  transform: translate(-50%, -50%);
+  margin: 20px;
+  width: 490px;
+  height: 480px;
+  background-color: #71b3c4;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
 }

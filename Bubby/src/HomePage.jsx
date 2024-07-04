@@ -60,7 +60,9 @@ const HomePage = ({ navigate }) => {
   };
 
   return (
+    <div className="background">
     <div className="center-container">
+    <div className="circle_decoration"/>
       <div className="buttons-container">
         <button
           className="circle-button button-1"
@@ -194,6 +196,7 @@ const HomePage = ({ navigate }) => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
