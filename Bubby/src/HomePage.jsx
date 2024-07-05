@@ -26,7 +26,6 @@ const HomePage = ({ navigate }) => {
 
     fetchUserData();
   }, []);
-
   const handleNavigation = (page) => {
     navigate(page);
   };
@@ -92,7 +91,38 @@ const HomePage = ({ navigate }) => {
     );
   };
 
-
+  const users = [
+    {
+      name: 'User 1',
+      score: 150,
+      profileImage: 'https://i.imgur.com/B8bse0F.jpg',
+    },
+    {
+      name: 'User 2',
+      score: 120,
+      profileImage: 'https://i.imgur.com/a5ymhRM.jpg',
+    },
+    {
+      name: 'User 3',
+      score: 100,
+      profileImage: 'https://i.imgur.com/w89SxVx.jpg',
+    },
+    {
+      name: 'User 4',
+      score: 80,
+      profileImage: 'https://i.imgur.com/YF397nd.jpg',
+    },
+    {
+      name: 'User 5',
+      score: 60,
+      profileImage: 'https://i.imgur.com/zKfQzrN.jpg',
+    },
+    {
+      name: 'User 6',
+      score: 50,
+      profileImage: 'https://i.imgur.com/J5rC2zt.jpg',
+    }
+  ];
   return (
     <div className="background">
       <div className="center-container">
@@ -155,12 +185,12 @@ const HomePage = ({ navigate }) => {
             <img src="https://i.imgur.com/EViZYEq.jpg" alt="home" />
           </button>
         </div>
-        <div className="circle-image"
+        <div
+          className="circle-image"
           id="center_circle"
           onClick={toggleImage}
           style={{ backgroundImage: `url(${currentImage})` }}
         />
-
         <div className="imagesContainer">
           <div className="imageWrapper">
             <img src="https://i.imgur.com/B8bse0F.jpg" alt="Image 1" />
@@ -181,16 +211,16 @@ const HomePage = ({ navigate }) => {
             +
           </div>
         </div>
-
+  
         <div className="pointsArea">
           :הנקודות שצברת
-          {user&& user.grade&&<div className="pointsDisplay">{user.grade}</div>}
+          {user && user.grade && <div className="pointsDisplay">{user.grade}</div>}
         </div>
-
+  
         <div className="profileArea"></div>
-
+  
         {showTooltip && <div className="bottom-tooltip">{tooltipContent}</div>}
-
+  
         {isModalOpen && (
           <div className="modal">
             <div className="modal-content">
@@ -209,7 +239,7 @@ const HomePage = ({ navigate }) => {
             </div>
           </div>
         )}
-
+  
         {isSecondModalOpen && (
           <div className="modal">
             <div className="modal-content">
@@ -217,7 +247,6 @@ const HomePage = ({ navigate }) => {
                 &times;
               </span>
               <h2 style={{ color: '#472151' }}>?איך עזרת לסבתא במטלות הבית</h2>
-             
               <textarea
                 value={feedbackText}
                 onChange={(e) => setFeedbackText(e.target.value)}
@@ -229,9 +258,52 @@ const HomePage = ({ navigate }) => {
             </div>
           </div>
         )}
+  
+        <div className="pointsDisplay">255</div>
+        <div className="scoreBoard">
+          {users.map((user, index) => (
+            <div className="scoreBoardItem" key={index}>
+              <img src={user.profileImage} alt={`Profile of ${user.name}`} className="profileImage" />
+              <div className="userInfo">
+                <div className="userName">{user.name}</div>
+                <div className="userScore">{user.score} נקודות</div>
+              </div>
+            </div>
+          ))}
+        </div>
+  
+        {showTooltip && <div className="tooltip">{tooltipContent}</div>}
+  
+        {isModalOpen && (
+          <div className="modal" onClick={handleModalToggle}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h2>דיווח על מטלה</h2>
+              <textarea
+                value={taskText}
+                onChange={(e) => setTaskText(e.target.value)}
+                placeholder="פרט את המטלה שביצעת..."
+              ></textarea>
+              <button onClick={handleTaskReport}>דווח</button>
+              <button onClick={handleModalToggle}>סגור</button>
+            </div>
+          </div>
+        )}
+  
+        {isSecondModalOpen && (
+          <div className="modal" onClick={handleSecondModalToggle}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h2>שליחת פידבק</h2>
+              <textarea
+                value={feedbackText}
+                onChange={(e) => setFeedbackText(e.target.value)}
+                placeholder="שלח את המשוב שלך..."
+              ></textarea>
+              <button onClick={handleFeedbackSubmit}>שלח</button>
+              <button onClick={handleSecondModalToggle}>סגור</button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
-  );
-};
-
-export default HomePage;
+  );}
+  export default HomePage;
