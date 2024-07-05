@@ -384,27 +384,51 @@ textarea {
   vertical-align: center;
 }
 
-.profileArea{
+.scoreBoard {
   position: absolute;
-  bottom: 2%;
+  bottom: -10%;
   left: 80.5%;
   width: 290px;
-  height: 300px;
-  /* border-color:#ffa551; */
-
+  height: auto;
+  background-color: white;
+  border: 5px solid orange;
+  border-radius: 8px;
   text-align: right;
   font-weight: bold;
-  
-  background-color: white; /* Background color */
-  border: 5px solid orange; /* Border color and thickness */
-  border-radius: 8px; /* Rounded corners (optional) */
-  display: flex; /* Use Flexbox */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  padding: 10px; /* Padding inside the scoreboard */
 }
+
+.scoreBoardItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0; /* Spacing between items */
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 2px solid orange; /* Optional: Border around images */
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 16px;
+  color: #624185; /* Match the theme color */
+}
+
+.userScore {
+  font-size: 14px;
+  color: #333;
+}
+
 
 .circle_decoration{
   position: absolute;
@@ -419,3 +443,5 @@ textarea {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
 }
+
+
