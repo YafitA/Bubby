@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const HomePage = ({ navigate }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,6 +10,22 @@ const HomePage = ({ navigate }) => {
   const [tooltipContent, setTooltipContent] = useState('');
   const [showTooltip, setShowTooltip] = useState(false);
   const [currentImage, setCurrentImage] = useState('https://i.imgur.com/npQO2Eb.jpg'); // Initial image
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/user/1');
+        const res= await response.json();
+        console.log(res);
+          setUser(res);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleNavigation = (page) => {
     navigate(page);
@@ -20,6 +37,14 @@ const HomePage = ({ navigate }) => {
 
   const handleTaskReport = () => {
     console.log('Task reported:', taskText);
+    axios.put(`http://localhost:3000/user/1`, { ...user, grade: user.grade + 10 })
+      .then(response => {
+        setUser(response.data);
+        console.log('Task report successful:', response.data);
+      })
+      .catch(error => {
+        console.error('Error reporting task:', error);
+      });
     setIsModalOpen(false);
     setTaskText('');
   };
@@ -30,6 +55,14 @@ const HomePage = ({ navigate }) => {
 
   const handleFeedbackSubmit = () => {
     console.log('Feedback submitted:', feedbackText);
+    axios.put(`http://localhost:3000/user/1`, { ...user, grade: user.grade + 5 })
+      .then(response => {
+        setUser(response.data);
+        console.log('Feedback submit successful:', response.data);
+      })
+      .catch(error => {
+        console.error('Error submitting feedback:', error);
+      });
     setIsSecondModalOpen(false);
     setFeedbackText('');
   };
@@ -53,150 +86,150 @@ const HomePage = ({ navigate }) => {
 
   const toggleImage = () => {
     setCurrentImage((prevImage) =>
-      prevImage == 'https://i.imgur.com/npQO2Eb.jpg'
+      prevImage === 'https://i.imgur.com/npQO2Eb.jpg'
         ? 'https://i.imgur.com/cHjwyAD.jpg'
         : 'https://i.imgur.com/npQO2Eb.jpg'
     );
   };
 
+
   return (
     <div className="background">
-    <div className="center-container">
-    <div className="circle_decoration"/>
-      <div className="buttons-container">
-        <button
-          className="circle-button button-1"
-          onClick={() => handleNavigation('second')}
-          onMouseEnter={() => handleMouseEnter('תעד את הרגע! העלאת תמונה לאלבום התמונות')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src="https://i.imgur.com/VL452a7.jpg" alt="camera" />
-        </button>
-        <button
-          className="circle-button button-2"
-          onClick={() => handleNavigation('third')}
-          onMouseEnter={() => handleMouseEnter('משעמם? משחק עם סבתא')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src="https://i.imgur.com/45MzSdp.jpg" alt="game-controller" />
-        </button>
-        <button
-          className="circle-button button-3"
-          onClick={HandleCall}
-          onMouseEnter={() => handleMouseEnter('למה שלא תתקשר לסבתא? שיחה עם סבתא')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src="https://i.imgur.com/KrWAY9i.jpg" alt="phone" />
-        </button>
-        <button
-          className="circle-button button-4"
-          onClick={handleModalToggle}
-          onMouseEnter={() => handleMouseEnter('מתי בפעם האחרונה בילית עם סבתא? בילוי חודשי')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src="https://i.imgur.com/HDnOTsF.jpg" alt="car" />
-        </button>
-        <button
-          className="circle-button button-5"
-          onClick={HandleMessage}
-          onMouseEnter={() => handleMouseEnter('מה נשמע עם סבתא? שלח לה הודעה')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src="https://i.imgur.com/lfPnyMI.jpg" alt="message" />
-        </button>
-        <button
-          className="circle-button button-6"
-          onClick={() => handleNavigation('5th')}
-          onMouseEnter={() => handleMouseEnter('סבתא מרגישה בודדה! לבקר את סבתא')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src="https://i.imgur.com/VyOq5f3.jpg" alt="visit" />
-        </button>
-        <button
-          className="circle-button button-7"
-          onClick={handleSecondModalToggle}
-          onMouseEnter={() => handleMouseEnter('סבתא זקוקה לעזרתך! ביצוע מטלות בית')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src="https://i.imgur.com/EViZYEq.jpg" alt="home" />
-        </button>
-      </div>
-      <div className="circle-image"
-        id="center_circle"
-        onClick={toggleImage}
-        style={{ backgroundImage: `url(${currentImage})` }}
-      />
+      <div className="center-container">
+        <div className="circle_decoration" />
+        <div className="buttons-container">
+          <button
+            className="circle-button button-1"
+            onClick={() => handleNavigation('second')}
+            onMouseEnter={() => handleMouseEnter('תעד את הרגע! העלאת תמונה לאלבום התמונות')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src="https://i.imgur.com/VL452a7.jpg" alt="camera" />
+          </button>
+          <button
+            className="circle-button button-2"
+            onClick={() => handleNavigation('third')}
+            onMouseEnter={() => handleMouseEnter('משעמם? משחק עם סבתא')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src="https://i.imgur.com/45MzSdp.jpg" alt="game-controller" />
+          </button>
+          <button
+            className="circle-button button-3"
+            onClick={HandleCall}
+            onMouseEnter={() => handleMouseEnter('למה שלא תתקשר לסבתא? שיחה עם סבתא')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src="https://i.imgur.com/KrWAY9i.jpg" alt="phone" />
+          </button>
+          <button
+            className="circle-button button-4"
+            onClick={handleModalToggle}
+            onMouseEnter={() => handleMouseEnter('מתי בפעם האחרונה בילית עם סבתא? בילוי חודשי')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src="https://i.imgur.com/HDnOTsF.jpg" alt="car" />
+          </button>
+          <button
+            className="circle-button button-5"
+            onClick={HandleMessage}
+            onMouseEnter={() => handleMouseEnter('מה נשמע עם סבתא? שלח לה הודעה')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src="https://i.imgur.com/lfPnyMI.jpg" alt="message" />
+          </button>
+          <button
+            className="circle-button button-6"
+            onClick={() => handleNavigation('5th')}
+            onMouseEnter={() => handleMouseEnter('סבתא מרגישה בודדה! לבקר את סבתא')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src="https://i.imgur.com/VyOq5f3.jpg" alt="visit" />
+          </button>
+          <button
+            className="circle-button button-7"
+            onClick={handleSecondModalToggle}
+            onMouseEnter={() => handleMouseEnter('סבתא זקוקה לעזרתך! ביצוע מטלות בית')}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src="https://i.imgur.com/EViZYEq.jpg" alt="home" />
+          </button>
+        </div>
+        <div className="circle-image"
+          id="center_circle"
+          onClick={toggleImage}
+          style={{ backgroundImage: `url(${currentImage})` }}
+        />
 
-      <div className="imagesContainer">
-        <div className="imageWrapper">
-          <img src="https://i.imgur.com/B8bse0F.jpg" alt="Image 1" />
-        </div>
-        <div className="imageWrapper">
-          <img src="https://i.imgur.com/a5ymhRM.jpg" alt="Image 2" />
-        </div>
-        <div className="imageWrapper">
-          <img src="https://i.imgur.com/w89SxVx.jpg" alt="Image 3" />
-        </div>
-        <div className="imageWrapper">
-          <img src="https://i.imgur.com/YF397nd.jpg" alt="Image 4" />
-        </div>
-        <div className="imageWrapper">
-          <img src="https://i.imgur.com/uNuSwHW.jpg" alt="Image 5" />
-        </div>
-        <div className="addPhoto" onClick={() => handleNavigation('second')}>
-          +
-        </div>
-      </div>
-
-      <div className="pointsArea">
-        :הנקודות שצברת
-        <div className="pointsDisplay">255</div>
-      </div>
-
-      <div className="profileArea">
-        
-      </div>
-
-      {showTooltip && <div className="bottom-tooltip">{tooltipContent}</div>}
-
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close-button" onClick={handleModalToggle}>
-              &times;
-            </span>
-            <h2 style={{ color: '#472151' }}>!ספרו לנו מה עשיתם</h2>
-            <textarea
-              value={taskText}
-              onChange={(e) => setTaskText(e.target.value)}
-              placeholder="עשינו הליכה בפארק..."
-            ></textarea>
-            <button className="report-button" onClick={handleTaskReport}>
-              קבל נקודות!
-            </button>
+        <div className="imagesContainer">
+          <div className="imageWrapper">
+            <img src="https://i.imgur.com/B8bse0F.jpg" alt="Image 1" />
+          </div>
+          <div className="imageWrapper">
+            <img src="https://i.imgur.com/a5ymhRM.jpg" alt="Image 2" />
+          </div>
+          <div className="imageWrapper">
+            <img src="https://i.imgur.com/w89SxVx.jpg" alt="Image 3" />
+          </div>
+          <div className="imageWrapper">
+            <img src="https://i.imgur.com/YF397nd.jpg" alt="Image 4" />
+          </div>
+          <div className="imageWrapper">
+            <img src="https://i.imgur.com/uNuSwHW.jpg" alt="Image 5" />
+          </div>
+          <div className="addPhoto" onClick={() => handleNavigation('second')}>
+            +
           </div>
         </div>
-      )}
 
-      {isSecondModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close-button" onClick={handleSecondModalToggle}>
-              &times;
-            </span>
-            <h2 style={{ color: '#472151' }}>?איך עזרת לסבתא במטלות הבית</h2>
-            <textarea
-              value={feedbackText}
-              onChange={(e) => setFeedbackText(e.target.value)}
-              placeholder="קיפלתי כביסה/שטפתי כלים..."
-            ></textarea>
-            <button className="report-button" onClick={handleFeedbackSubmit}>
-              קבל נקודות!
-            </button>
-          </div>
+        <div className="pointsArea">
+          :הנקודות שצברת
+          {user&& user.grade&&<div className="pointsDisplay">{user.grade}</div>}
         </div>
-      )}
-    </div>
+
+        <div className="profileArea"></div>
+
+        {showTooltip && <div className="bottom-tooltip">{tooltipContent}</div>}
+
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close-button" onClick={handleModalToggle}>
+                &times;
+              </span>
+              <h2 style={{ color: '#472151' }}>!ספרו לנו מה עשיתם</h2>
+              <textarea
+                value={taskText}
+                onChange={(e) => setTaskText(e.target.value)}
+                placeholder="עשינו הליכה בפארק..."
+              ></textarea>
+              <button className="report-button" onClick={handleTaskReport}>
+                קבל נקודות!
+              </button>
+            </div>
+          </div>
+        )}
+
+        {isSecondModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close-button" onClick={handleSecondModalToggle}>
+                &times;
+              </span>
+              <h2 style={{ color: '#472151' }}>?איך עזרת לסבתא במטלות הבית</h2>
+             
+              <textarea
+                value={feedbackText}
+                onChange={(e) => setFeedbackText(e.target.value)}
+                placeholder="קיפלתי כביסה/שטפתי כלים..."
+              ></textarea>
+              <button className="report-button" onClick={handleFeedbackSubmit}>
+                קבל נקודות!
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
